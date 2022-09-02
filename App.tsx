@@ -19,7 +19,8 @@ function App(): JSX.Element {
                 <p> SLOWLY STARTING TO BE EXPLORED FOR OTHER COMPLEX</p>
                 <p> WORK, RESEARCH AND ADVANCED TECHNOLOGIES.</p>
 
-                <p>End of file</p>
+                <p>End of file for this session/</p>
+                <p>Adding to branch</p>
                 
             </p>
         </div>
