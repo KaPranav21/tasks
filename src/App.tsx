@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
-import patImg from "./pajick.jpg";
 
 function App(): JSX.Element {
     return (
@@ -11,7 +10,9 @@ function App(): JSX.Element {
             </header>
             <h1>This page belongs to Pranav Kamath</h1>
             <img
-                src={patImg}
+                src={
+                    "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp"
+                }
                 alt="The great evildoers of Sacramento, California :0"
             />
             <ol>
