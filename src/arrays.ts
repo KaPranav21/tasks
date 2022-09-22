@@ -5,7 +5,17 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    console.log(numbers);
+    if (numbers.length == 0) {
+        return [];
+    } else if (numbers.length == 1) {
+        const xArr = [...numbers, ...numbers];
+        return xArr;
+    } else {
+        const yArr = [...numbers];
+        yArr.splice(1, yArr.length - 2);
+        return yArr;
+    }
 }
 
 /**
@@ -13,7 +23,8 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const xArr = numbers.map((xArr: number): number => xArr * 3);
+    return xArr;
 }
 
 /**
@@ -21,7 +32,10 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    const yArr = numbers.map((xStr: string): number =>
+        isNaN(parseInt(xStr)) ? 0 : parseInt(xStr)
+    );
+    return yArr;
 }
 
 /**
@@ -32,7 +46,13 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    const yArr = amounts.map(
+        (xStr: string): string => (xStr = xStr.replace("$", ""))
+    );
+    const zArr = yArr.map((xStr: string): number =>
+        isNaN(parseInt(xStr)) ? 0 : parseInt(xStr)
+    );
+    return zArr;
 };
 
 /**
@@ -41,7 +61,13 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const yArr = messages.filter(
+        (xStr: string): boolean => !xStr.includes("?")
+    );
+    const zArr = yArr.map((xStr: string): string =>
+        xStr.includes("!") ? xStr.toUpperCase() : xStr
+    );
+    return zArr;
 };
 
 /**
@@ -49,7 +75,8 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const yArr = words.filter((xStr: string): boolean => xStr.length < 4);
+    return yArr.length;
 }
 
 /**
@@ -58,7 +85,14 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    if (colors.length == 0) {
+        return true;
+    } else {
+        return colors.every(
+            (xStr: string): boolean =>
+                xStr == "red" || xStr == "blue" || xStr == "green"
+        );
+    }
 }
 
 /**
@@ -69,7 +103,15 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length == 0) {
+        return "0=0";
+    }
+    const sum = addends.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    const str = sum.toString() + "=" + addends.join("+");
+    return str;
 }
 
 /**
@@ -82,5 +124,25 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    if (values.every((price: number): boolean => price > 0)) {
+        const sum = values.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        const fArr = [...values];
+        fArr.push(sum);
+        return fArr;
+    } else {
+        const negInd = values.findIndex((xNum: number): boolean => xNum < 0);
+        const myArr = [...values];
+        const a = myArr.slice(0, negInd);
+
+        const sum = a.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        const xArr = [...values];
+        xArr.splice(negInd + 1, 0, sum);
+        return xArr;
+    }
 }
