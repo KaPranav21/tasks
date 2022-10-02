@@ -26,8 +26,7 @@ function App(): JSX.Element {
             <p></p>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload. pranav edited this file.
-                <p>1. Hello World : 2. HELLO WORLD : 3. hello world</p>
+                automatically reload. pranav edited this file. 3. hello world
             </p>
             <Container>
                 <div className="App">
