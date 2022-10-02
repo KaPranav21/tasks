@@ -1,4 +1,3 @@
-import { notEqual } from "assert";
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
