@@ -35,7 +35,7 @@ export function ChangeColor(): JSX.Element {
 
     return (
         <div>
-            <h3>Change Color</h3>
+            <h2>Change Color</h2>
             <div>
                 {COLORS.map((tmpCol: string) => (
                     <Form.Check
@@ -57,7 +57,7 @@ export function ChangeColor(): JSX.Element {
                     data-testid="colored-box"
                     style={{ backgroundColor: currCol }}
                 >
-                    <h2>Color of Choice : {""} </h2>
+                    <h5>You have chosen</h5>
                     {currCol}
                 </span>
             </div>

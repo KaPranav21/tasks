@@ -10,7 +10,7 @@ export function GiveAttempts(): JSX.Element {
     return (
         <div>
             <h3>Give Attempts</h3>
-            <h5>Attempts : {userAttLeft}</h5>
+            <h4>Attempts : {userAttLeft}</h4>
             <Form.Group>
                 <Form.Control
                     type="number"
@@ -20,15 +20,21 @@ export function GiveAttempts(): JSX.Element {
                     }
                 />
             </Form.Group>
-            <Button onClick={() => setUserAttLeft(tmpPReqAtt + userAttLeft)}>
-                Gain
-            </Button>
-            <Button
-                onClick={() => setUserAttLeft(userAttLeft - 1)}
-                disabled={userAttLeft == 0}
-            >
-                use
-            </Button>
+            <div>
+                <Button
+                    onClick={() => setUserAttLeft(tmpPReqAtt + userAttLeft)}
+                >
+                    Gain
+                </Button>
+            </div>
+            <div>
+                <Button
+                    onClick={() => setUserAttLeft(userAttLeft - 1)}
+                    disabled={userAttLeft == 0}
+                >
+                    Use an Attempt
+                </Button>
+            </div>
         </div>
     );
 }

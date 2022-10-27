@@ -16,28 +16,29 @@ export function EditMode(): JSX.Element {
         <div>
             <h3>Edit Mode</h3>
             <div>
+                <Form.Check
+                    type="switch"
+                    id="switch-edit-mode"
+                    label="Settings"
+                    checked={isEdit}
+                    onChange={() => setEditMode(!isEdit)}
+                ></Form.Check>
                 {isEdit && (
                     <Form.Check
                         type="switch"
                         id="switch-student"
-                        label="Student?"
+                        label="Are You a Student?"
                         checked={isStudent}
                         onChange={() => setIsStudent(!isStudent)}
                     ></Form.Check>
                 )}
-
-                <Form.Check
-                    type="switch"
-                    id="switch-edit-mode"
-                    label="Edit Mode"
-                    checked={isEdit}
-                    onChange={() => setEditMode(!isEdit)}
-                ></Form.Check>
             </div>
             <div>
                 {isEdit && (
                     <Form.Group controlId="formStudentName">
-                        <Form.Label>Enter Name:</Form.Label>
+                        <Form.Label>
+                            <h6>User name is :</h6>
+                        </Form.Label>
                         <Form.Control
                             type="text"
                             value={userName}
